@@ -1,0 +1,40 @@
+#include <vector>
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	vector <int> abs;
+	vector<int>::size_type sizetype; //sizetype y vector<int>::size_type tipi e
+	vector<int>::iterator iter;
+
+	sizetype = abs.size();
+	iter = abs.begin();
+	iter = abs.end();
+
+	abs.push_back(10);    //lcnum e
+	abs.push_back(5);
+	abs.assign(4,3);      //vercnum e 1 argument chapy nor isk 2rd te vor tivy texadri
+	abs.at(3) = 9;         //poxum e vercrac argumenti arjeqin havasar indexov elementy trvac arjeqov
+	abs.emplace(abs.begin(), 7); 
+	abs.emplace(abs.end(), 15);  //nshavc texic avelacnum e nor elementi tex u lcnum elementy trvac arjeqov
+	abs.emplace_back(30);   //verjum avelacnum e nor taracq elementi hamar u lcnum stacac argumenty
+	abs.insert(abs.begin()+1, 20);  //trvac texum poxum e elementy
+	abs.erase(abs.begin()); //jnjum e nshvac iteratori elementy
+	abs.pop_back(); //jnjum e verjin elementy
+	abs.reserve(20);  //pahuma taracq evs 20 hat elementi hamar
+	abs.shrink_to_fit();  //jnjum e avelord pahvac taracqy
+
+
+
+	cout << abs.front()<<endl; //ktpi skzpi elementy
+	cout << abs.data()<<endl;  //ktpi vectori 0rd elementi hascen
+	for_each(abs.begin(), abs.end(), [](const  int n) {  std::cout << n << ' ';  });
+	
+
+	abs.clear();
+	
+
+	
+}
